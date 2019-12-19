@@ -1,7 +1,8 @@
 import { TopHeadlinesResponse } from "../types";
+import { API_KEY } from "../apiKey";
 
 //this is a non-secret API key. It is from https://newsapi.org. it is free tier and is only for rate limiting, and does not grant access to any private resoures.
-const newsAPIKey = "5fe72c55278a490684397c2abf237c0b";
+const newsAPIKey = API_KEY;
 const apiUrl = "https://newsapi.org/v2/";
 
 //fetches all top headlines
