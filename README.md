@@ -1,8 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# News Client
 
-In the project directory, you can run:
+This is a simple React app this displays news headlines.
 
 ### News API
 
@@ -17,3 +17,5 @@ You will also see any lint errors in the console.
 ## Running the application
 
 Ensure all dependencies are installed with `yarn install`. Then run `yarn start`.
+
+### Project Structure

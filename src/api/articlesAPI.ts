@@ -5,28 +5,40 @@ const newsAPIKey = API_KEY;
 const apiUrl = "https://newsapi.org/v2/";
 
 //fetches all top headlines
-const fetchTopHeadlines = (): Promise<TopHeadlinesResponse> => {
-  return (
-    fetch(apiUrl + "top-headlines?apiKey=" + newsAPIKey + "&country=us")
-      //turns response body into json
-      .then(res => {
-        return res.json();
-      })
+const fetchTopHeadlines = async (
+  page: number
+): Promise<TopHeadlinesResponse> => {
+  let res = await fetch(
+    apiUrl +
+      "/top-headlines" +
+      "?country=us&" +
+      "apikey=" +
+      newsAPIKey +
+      "&page=" +
+      page
   );
+  return await res.json();
 };
 
 //fetches articles from one category
-const fetchArticlesByCategory = (
-  category: string
+const fetchArticlesByCategory = async (
+  category: string,
+  page: number,
+  pageSize: number
 ): Promise<TopHeadlinesResponse> => {
-  return fetch(
+  let response = await fetch(
     apiUrl +
       "top-headlines?apiKey=" +
       newsAPIKey +
       "&country=us" +
       "&category=" +
-      category
-  ).then(res => res.json());
+      category +
+      "&page=" +
+      page +
+      "&pageSize=" +
+      pageSize
+  );
+  return await response.json();
 };
 
 //exports api calls as an object

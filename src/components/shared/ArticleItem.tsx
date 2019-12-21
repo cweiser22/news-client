@@ -1,6 +1,6 @@
 import React from "react";
 import { Article } from "../../types";
-import { Item, Divider } from "semantic-ui-react";
+import { Item } from "semantic-ui-react";
 import "../FrontPage/FrontPage";
 import "./ArticleItem.css";
 
@@ -25,7 +25,6 @@ export const ArticleItem: React.FC<Props> = (props: Props) => {
           <Item.Description>{props.article.description}</Item.Description>
         </Item.Content>
       </Item>
-      <Divider />
     </React.Fragment>
   );
 };

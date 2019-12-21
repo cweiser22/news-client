@@ -1,27 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./FrontPage.css";
-import { Article } from "../../types";
-import { articlesAPI } from "../../api/articlesAPI";
-import { ListLayout } from "../ListLayout/ListLayout";
+import { Grid, Container, Header } from "semantic-ui-react";
+import { GeneralNews } from "./GeneralNews";
 
 export const FrontPage: React.FC = () => {
-  const [articles, setArticles] = useState<Article[]>([]);
-  const [error, setError] = useState<string>("");
-  const [pending, setPending] = useState<boolean>(true);
-
-  useEffect(() => {
-    articlesAPI.fetchTopHeadlines().then(json => {
-      if (json.status != "ok") {
-        setPending(false);
-        return setError("Failed to fetch articles.");
-      }
-      setPending(false);
-      return setArticles(json.articles);
-    });
-  });
   return (
-    <main>
-      <ListLayout articles={articles} error={error} pending={pending} />
-    </main>
+    <Grid container as="main">
+      <Grid.Row>
+        <Grid.Column width={8}>
+          {/*This column displays header text and some articles.*/}
+          <Container text>
+            <Grid>
+              <Grid.Row>
+                <Grid.Column width={12}>
+                  <Header as="h1">NewsSite</Header>
+                  <p>
+                    Here is where you can get news from a variety of different
+                    sources. All news comes from
+                    <a href="https://newsapi.org"> https://newsapi.org</a>.
+                  </p>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
+          </Container>
+        </Grid.Column>
+        <Grid.Column width={8}>
+          <GeneralNews />
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
   );
 };

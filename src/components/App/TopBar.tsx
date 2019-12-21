@@ -21,6 +21,7 @@ export const TopBar: React.FC = () => {
         <Menu.Item as="a" href="/category/entertainment">
           Entertainment
         </Menu.Item>
+        <div style={{ float: "right" }}></div>
       </Container>
     </Menu>
   );
