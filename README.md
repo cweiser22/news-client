@@ -27,3 +27,8 @@ Ensure all dependencies are installed with `yarn install`. Then run `yarn start`
         #contains react components used in multiple routes
 
 ```
+
+## Todo
+
+- make more visually appealing
+- add search field
