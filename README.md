@@ -1,5 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 # News Client
 
 This is a simple React app this displays news headlines.
@@ -18,4 +16,14 @@ You will also see any lint errors in the console.
 
 Ensure all dependencies are installed with `yarn install`. Then run `yarn start`.
 
-### Project Structure
+## Project Structure
+
+```
+--api
+    #contains code for api calls
+---components
+    #contains all react components, organized by route
+    |--shared
+        #contains react components used in multiple routes
+
+```
