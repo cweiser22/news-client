@@ -32,3 +32,4 @@ Ensure all dependencies are installed with `yarn install`. Then run `yarn start`
 
 - make more visually appealing
 - add search field
+- add full tests

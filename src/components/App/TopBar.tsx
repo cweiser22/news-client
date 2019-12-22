@@ -9,7 +9,7 @@ export const TopBar: React.FC = () => {
           NewsSite
         </Menu.Item>
         <Menu.Item as="a" href="/">
-          Top
+          Home
         </Menu.Item>
         <Menu.Item as="a" href="/category/business">
           Business

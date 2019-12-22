@@ -4,6 +4,7 @@ import { Header, Item, Loader, Message } from "semantic-ui-react";
 import { articlesAPI } from "../../api/articlesAPI";
 import { ArticleItem } from "../shared/ArticleItem";
 
+//General news shows some miscellaneous news on the front page
 export const GeneralNews: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [pending, setPending] = useState<boolean>(true);

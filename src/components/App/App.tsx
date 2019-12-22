@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { CategoryPage } from "../CategoryPage/CategoryPage";
 
 const App: React.FC = () => {
-  const [currentTag, setCurrentTag] = useState("");
   return (
     <Router>
       <TopBar />

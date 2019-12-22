@@ -16,13 +16,23 @@ interface Props {
   category: string;
 }
 
+//this component handles fetching and displaying articles from a specific category
 export const CategoryArticleList: React.FC<Props> = (props: Props) => {
-  //state needed for pagination and fetching
+  //the page the user is currently looking at
   const [page, setPage] = useState<number>(1);
+
+  //articles fetched from server
   const [articles, setArticles] = useState<Article[]>([]);
+
+  //pending is used to conditionally render a loading spinner
   const [pending, setPending] = useState<boolean>(true);
+
+  //no error displays while errorMessage is falsey
   const [errorMessage, setErrorMessage] = useState<string>("");
+
+  //tells the paginator how many boxes to display
   const [totalPages, setTotalPages] = useState<number>(1);
+
   //destructure props
   const { category } = props;
 
@@ -40,17 +50,14 @@ export const CategoryArticleList: React.FC<Props> = (props: Props) => {
 
         //display error if request didn't go well
         if (response.status != "ok") {
+          //hides loader
           setPending(false);
+
+          //displays an error
           setErrorMessage(
             "Something went wrong, we couldn't fetch the articles."
           );
           return;
-        }
-
-        //code to handle no results
-        if (response.totalResults === 0) {
-          //TODO: handle no results
-          setErrorMessage("");
         }
 
         //clear old error messages
@@ -74,6 +81,7 @@ export const CategoryArticleList: React.FC<Props> = (props: Props) => {
     fetchArticles();
   }, [page]);
 
+  //event that handles paginator click
   function handlePageChange(e: React.MouseEvent, data: PaginationProps) {
     const { activePage } = data;
 
