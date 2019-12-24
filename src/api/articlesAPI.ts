@@ -41,5 +41,29 @@ const fetchArticlesByCategory = async (
   return await response.json();
 };
 
+const fetchSearchResults = async (
+  q: string,
+  page: number,
+  pageSize: number
+): Promise<TopHeadlinesResponse> => {
+  let response = await fetch(
+    apiUrl +
+      "top-headlines?apiKey=" +
+      newsAPIKey +
+      "&country=us" +
+      "&page=" +
+      page +
+      "&pageSize=" +
+      pageSize +
+      "&q=" +
+      q
+  );
+  return await response.json();
+};
+
 //exports api calls as an object
-export const articlesAPI = { fetchTopHeadlines, fetchArticlesByCategory };
+export const articlesAPI = {
+  fetchTopHeadlines,
+  fetchArticlesByCategory,
+  fetchSearchResults
+};

@@ -4,7 +4,7 @@ import { Header, Item, Loader, Message } from "semantic-ui-react";
 import { articlesAPI } from "../../api/articlesAPI";
 import { ArticleItem } from "../shared/ArticleItem";
 
-//General news shows some miscellaneous news on the front page
+//GeneralNews shows some miscellaneous news on the front page
 export const GeneralNews: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [pending, setPending] = useState<boolean>(true);
@@ -30,7 +30,9 @@ export const GeneralNews: React.FC = () => {
     fetchGeneralNews();
   }, []);
 
-  const articleItems = articles.map(a => <ArticleItem article={a} />);
+  const articleItems = articles.map((a, i) => (
+    <ArticleItem article={a} key={++i} />
+  ));
   return (
     <React.Fragment>
       <Header as="h3">General News</Header>

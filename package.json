@@ -1,5 +1,12 @@
 {
   "name": "news",
+  "author": {
+    "name": "Cooper Weiser"
+  },
+  "repository": {
+    "url": "https://github.com/cweiser22/news-client",
+    "type": "public"
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {

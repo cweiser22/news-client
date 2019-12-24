@@ -1,0 +1,7 @@
+.search-input-container {
+  padding-right: 4em;
+}
+
+.search-input-container input {
+  width: 100%;
+}
