@@ -20,7 +20,7 @@ export const SearchResultsPage: React.FC<RouteComponentProps> = (
           <div className="search-input-container">
             <SearchInput />
           </div>
-          <Header as="h1">Search results for '{search}'</Header>
+          <Header as="h1">Search results for '{query}'</Header>
         </Grid.Column>
       </Grid.Row>
       <Grid.Column width={8}>
